@@ -1,5 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
-    var User = sequelize.define("User", {
+    var Organization = sequelize.define("Organization", {
         name: {
             type: DataType.STRING,
             allowNull: false,
@@ -13,22 +13,12 @@ module.exports = function (sequelize, DataTypes) {
             validate: {
                 len: [1]
             }
-        },
-        hours: {
-            type: DataType.INTEGER,
-            defaultValue: 0
-        },
-        points: {
-            type: DataType.INTEGER,
-            defaultValue: 0
         }
-
     });
-
-    User.associate = function (models) {
-        User.hasMany(models.Activity, {
+    Organization.associate = function (models) {
+        Organization.hasMany(models.Activity, {
             onDelete: "cascade"
         });
     };
-    return User;
+    return Organization;
 }

@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS chipindb;
+CREATE DATABASE chipindb;
