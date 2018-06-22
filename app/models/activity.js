@@ -41,13 +41,11 @@ module.exports = function (sequelize, DataTypes) {
                 allowNull: false
             }
         });
-        Activity.associate = function (models) {
-            Activity.hasMany(models.User, {
-                foreignKey: {
-                    allowNull: false
-                }
-            });
-        };
+        Activity.hasMany(models.User, {
+            foreignKey: {
+                allowNull: false
+            }
+        });
     };
     return Activity;
 };
