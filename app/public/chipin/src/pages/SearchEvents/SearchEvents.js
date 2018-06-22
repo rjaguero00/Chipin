@@ -1,10 +1,10 @@
-import React from "react";
-import React, { Component } from 'react';
-import SearchList from '../../Components/SearchList';
-import SearchList from '../../Components/SearchList';
 
+import React, { Component } from 'react';
+
+import SearchList from '../../components/SearchList';
+import SearchItem from '../../components/SearchItem'
 import { Col, Row, Container } from "../../components/Grid";
-import API from '../../Utils/API.js';
+import API from '../../utils/API.js';
 
 class SearchEvents extends Component {
     state = {
