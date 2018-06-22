@@ -11,7 +11,7 @@ const SearchList = ({ children }) =>
                         <SearchItem key={activity._id} title={activity.title} body={activity.body} location={activity.location} />
                     )
                 }) :
-                <h5>Please Enter a Search</h5>
+                <h5>No Results</h5>
             }
         </div>
     </div>;

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import API from '../../Utils/API.js';
+import API from '../../utils/API.js';
 
 class SearchItem extends Component {
 
