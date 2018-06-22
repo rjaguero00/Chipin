@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import API from '../../Utils/API.js';
+import API from '../../utils/API.js';
+import SearchModal from '../SearchModal/SearchModal.js';
 
 class SearchItem extends Component {
 
@@ -21,6 +22,7 @@ class SearchItem extends Component {
                        <a href="">{this.props.title}</a></h5>
                     <p className="card-text">Activity: {this.props.body}</p>
                     <button onClick={this.saveActivity} className="btn btn-primary">Save</button>
+                    <SearchModal>{this.state.modalIsOpen}</SearchModal>                
                 </div>
             </div>
         )

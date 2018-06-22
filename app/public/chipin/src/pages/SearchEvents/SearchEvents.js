@@ -1,10 +1,11 @@
-import React from "react";
-import React, { Component } from 'react';
-import SearchList from '../../Components/SearchList';
-import SearchList from '../../Components/SearchList';
 
+import React, { Component } from 'react';
+
+import SearchList from '../../components/SearchList';
+import SearchItem from '../../components/SearchItem';
+import SearchModal from '../../components/SearchModal';
 import { Col, Row, Container } from "../../components/Grid";
-import API from '../../Utils/API.js';
+import API from '../../utils/API.js';
 
 class SearchEvents extends Component {
     state = {
@@ -45,6 +46,7 @@ class SearchEvents extends Component {
                         <div className="container">
                             <div>
                                 <SearchList>{this.state.results}</SearchList>
+                                <SearchModal>{this.state.modalIsOpen}</SearchModal>
                             </div>
                         </div>
                     </Col>
