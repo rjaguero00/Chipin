@@ -14,6 +14,10 @@ module.exports = function (sequelize, DataTypes) {
                 len: [1]
             }
         },
+        imageString: {
+            type: DataType.STRING,
+            allowNull: true
+        },
         hours: {
             type: DataType.INTEGER,
             defaultValue: 0
