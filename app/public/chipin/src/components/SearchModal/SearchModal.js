@@ -45,7 +45,7 @@ class SearchModal extends React.Component {
     render() {
         return (
             <div>
-                <button onClick={this.openModal}>Open Modal</button>
+                <button onClick={this.openModal}>SearchModal</button>
                 <Modal
                     isOpen={this.state.modalIsOpen}
                     onAfterOpen={this.afterOpenModal}
@@ -54,9 +54,13 @@ class SearchModal extends React.Component {
                     contentLabel="Example Modal"
                 >
 
-                    <h2 ref={subtitle => this.subtitle = subtitle}>Hello</h2>
+                    <h2 ref={subtitle => this.subtitle = subtitle}>MAP</h2>
+
+                    <div>
+                        google maps api
+                    </div>
                     <button onClick={this.closeModal}>close</button>
-                    <div>I am a modal</div>
+
 
                 </Modal>
             </div>
