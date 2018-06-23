@@ -14,6 +14,7 @@ const Home = () => (
             <Row>
                 <Col size="md-6">
                     <div className="About">
+                        <h3>About</h3>
                         <p style={{ marginBottom: 50}}>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc aliquet diam tortor, id
                             consequat mauris ullamcorper eu. Orci varius natoque penatibus et magnis dis parturient
@@ -31,6 +32,7 @@ const Home = () => (
                 </Col>
                 <Col size="md-6">
                     <div className="Feed">
+                        <h3>Feed</h3>
                         <p  style={{ marginBottom: 50}}>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc aliquet diam tortor, id
                             consequat mauris ullamcorper eu. Orci varius natoque penatibus et magnis dis parturient
