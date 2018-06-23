@@ -1,3 +1,7 @@
+img {
+    margin-bottom: 10px;
+}
+
 #sidebar {
     min-width: 250px;
     max-width: 250px;
@@ -10,7 +14,7 @@
 
 #sidebar.active {
     margin-left: -250px;
-    transform: rotateY(100deg);
+    transform: rotateY(0deg);
 }
 
 #sidebar .sidebar-header {
@@ -82,4 +86,23 @@ a.download {
 a.article, a.article:hover {
     background: #6d7fcc !important;
     color: #fff !important;
+}
+
+
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -250px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+    #content {
+        width: 100%;
+    }
+    #content.active {
+        width: calc(100% - 250px);
+    }
+    #sidebarCollapse span {
+        display: none;
+    }
 }
