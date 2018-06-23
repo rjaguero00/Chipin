@@ -1,15 +1,22 @@
-
 import React, { Component } from 'react';
-
 import SearchList from '../../components/SearchList';
-import SearchItem from '../../components/SearchItem';
+import SButton from '../../components/SButton/SButton';
+import Sidebar from '../../components/Sidebar';
+import Wrapper from '../../components/Wrapper';
 import SearchModal from '../../components/SearchModal';
-import { Col, Row, Container } from "../../components/Grid";
 import API from '../../utils/API.js';
+import "./SearchEvents.css"
+
+
 
 class SearchEvents extends Component {
     state = {
-        results: []
+        results: [],
+        title: "Teaching Artist",
+        body:"Seeking knowledgeable, reliable, enthusiastic and inspirational Teaching Artists in the disciplines of visual art, dance, music and drama, for our “A Taste of the Arts”, program. We are seeking Teaching Artists to provide instruction for an in-school arts enrichment program.",
+        contact:"fake@email.com",
+        location:"Tucson, Az",
+        hours:"Part Time"
     };
 
     componentDidMount() {
@@ -39,21 +46,54 @@ class SearchEvents extends Component {
 
 
     render() {
+        // return (
+        //     <Container fluid>
+        //         <Row>
+        //             <Col size="md-12">
+        //                 <div className="container">
+        //                     <div>
+        //                         <SearchList>{this.state.results}</SearchList>
+        //                         <SearchModal>{this.state.modalIsOpen}</SearchModal>
+        //                     </div>
+        //                 </div>
+        //             </Col>
+        //         </Row>
+        //     </Container>
+        // );
+
         return (
-            <Container fluid>
-                <Row>
-                    <Col size="md-12">
-                        <div className="container">
-                            <div>
-                                <SearchList>{this.state.results}</SearchList>
-                                <SearchModal>{this.state.modalIsOpen}</SearchModal>
-                            </div>
-                        </div>
-                    </Col>
-                </Row>
-            </Container>
+            <Wrapper>
+                <Sidebar />
+                {/* <div>
+                    <SButton />
+                </div>
+                <div className="mx-auto">
+                    <h5 className="header">Results</h5>
+                    <SearchList>{this.state.results}</SearchList>
+                    <SearchModal>{this.state.modalIsOpen}</SearchModal>
+                </div> */}
+            
+
+<div className="mx-auto">       
+<h5 className="header text-center">Results</h5>     
+<div className="card result-item">
+    <div className="card-body">
+        <h5 className="card-title ">
+            <a href="">{this.state.title}</a></h5>
+        <p className="card-text">Description: {this.state.body}</p>
+        <p className="card-text">Contact: {this.state.contact}</p>
+        <p className="card-text">Location: {this.state.location}</p>
+        <p className="card-text">Hours: {this.state.hours}</p>
+        <button onClick={this.saveActivity} className="btn btn-primary">Save</button>
+        <SearchModal>{this.state.modalIsOpen}</SearchModal>  
+    </div>
+</div>
+</div>
+
+            </Wrapper>
         );
     };
+
 };
 
 export default SearchEvents;

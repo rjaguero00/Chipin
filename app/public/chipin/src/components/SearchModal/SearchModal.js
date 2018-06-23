@@ -45,7 +45,7 @@ class SearchModal extends React.Component {
     render() {
         return (
             <div>
-                <button onClick={this.openModal}>SearchModal</button>
+                <button onClick={this.openModal}>Map</button>
                 <Modal
                     isOpen={this.state.modalIsOpen}
                     onAfterOpen={this.afterOpenModal}

@@ -3,12 +3,11 @@ import SearchItem from '../SearchItem'
 
 const SearchList = ({ children }) =>
     <div id="searchList" className="card">
-        <h4 id="searchListHeader" className="search-header text-center">Results</h4>
         <div className="card-body">
             {children[0] ?
-                children.slice(0,5).map(activity => {
+                children.slice(0,20).map(activity => {
                     return (
-                        <SearchItem key={activity._id} title={activity.title} body={activity.body} location={activity.location} />
+                        <SearchItem key={activity._id} title={activity.title} body={activity.body} contact={activity.contact} location={activity.location} location={activity.location} hours={activity.hours} />
                     )
                 }) :
                 <h5>No Results</h5>

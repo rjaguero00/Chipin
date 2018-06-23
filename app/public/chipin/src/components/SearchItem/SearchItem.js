@@ -8,11 +8,14 @@ class SearchItem extends Component {
         const activityData = {
             title: this.props.title,
             body: this.props.body,
-            location: this.props.location
+            contact: this.props.contact,
+            location: this.props.location,
+            hours: this.props.hours
         }
         console.log(activityData);
         API.saveActivity(activityData);
     }
+
 
     render() {
         return (
@@ -20,7 +23,10 @@ class SearchItem extends Component {
                 <div className="card-body">
                     <h5 className="card-title ">
                        <a href="">{this.props.title}</a></h5>
-                    <p className="card-text">Activity: {this.props.body}</p>
+                    <p className="card-text">Description: {this.props.body}</p>
+                    <p className="card-text">Contact: {this.props.contact}</p>
+                    <p className="card-text">Location: {this.props.location}</p>
+                    <p className="card-text">Hours: {this.props.hours}</p>
                     <button onClick={this.saveActivity} className="btn btn-primary">Save</button>
                     <SearchModal>{this.state.modalIsOpen}</SearchModal>                
                 </div>
