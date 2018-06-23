@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home.js";
 import Dashboard from "./pages/Dashboard.js";
 import SearchEvents from "./pages/SearchEvents/SearchEvents.js";
+import './App.css';
 
 const App = () => (
   <Router>
