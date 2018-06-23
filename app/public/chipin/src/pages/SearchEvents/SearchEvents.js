@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import SearchList from '../../components/SearchList';
 import SearchItem from '../../components/SearchItem';
 import SearchModal from '../../components/SearchModal';
+import Application from '../../components/Application';
 import { Col, Row, Container } from "../../components/Grid";
 import API from '../../utils/API.js';
 
@@ -47,6 +48,7 @@ class SearchEvents extends Component {
                             <div>
                                 <SearchList>{this.state.results}</SearchList>
                                 <SearchModal>{this.state.modalIsOpen}</SearchModal>
+                                <Application />
                             </div>
                         </div>
                     </Col>
