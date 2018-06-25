@@ -28,7 +28,12 @@ class SearchItem extends Component {
                     <p className="card-text">Location: {this.props.location}</p>
                     <p className="card-text">Hours: {this.props.hours}</p>
                     <button onClick={this.saveActivity} className="btn btn-primary">Save</button>
-                    <SearchModal>{this.state.modalIsOpen}</SearchModal>                
+                    <SearchModal 
+                    title={this.props.title}
+                    body={this.props.body}
+                    contact={this.props.contact}
+                    location={this.props.location} 
+                    hours={this.props.hours}>{this.state.modalIsOpen}</SearchModal>                
                 </div>
             </div>
         )
