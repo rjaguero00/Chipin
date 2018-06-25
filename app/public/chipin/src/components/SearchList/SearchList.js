@@ -7,7 +7,13 @@ const SearchList = ({ children }) =>
             {children[0] ?
                 children.slice(0,20).map(activity => {
                     return (
-                        <SearchItem key={activity._id} title={activity.title} body={activity.body} contact={activity.contact} location={activity.location} location={activity.location} hours={activity.hours} />
+                        <SearchItem 
+                        key={activity._id} 
+                        title={activity.title} 
+                        body={activity.body} 
+                        contact={activity.contact} 
+                        location={activity.location} 
+                        hours={activity.hours} />
                     )
                 }) :
                 <h5>No Results</h5>

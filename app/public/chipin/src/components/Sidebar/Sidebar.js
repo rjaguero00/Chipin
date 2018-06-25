@@ -8,7 +8,7 @@ const Sidebar = () => (
         </div> */}
 
         <ul className="list-unstyled components">
-            <p>Organization/User Name</p> <img src="https://placeholder.baker.com/200" class="rounded mx-auto d-block" alt="..." />
+            <p>Organization/User Name</p> <img src="https://placeholder.baker.com/200" className="rounded mx-auto d-block" alt="..." />
 
             <li className="active">
                 <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" className="dropdown-toggle">Events</a>
