@@ -1,6 +1,8 @@
 import React from 'react';
+import Geocode from "react-geocode";
 import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
+import Maps from '../Map/Map.js';
 
 const customStyles = {
     content: {
@@ -14,6 +16,13 @@ const customStyles = {
         height: '400px'
     }
 };
+// set Google Maps Geocoding API for purposes of quota management. Its optional but recommended.
+Geocode.setApiKey("AIzaSyCqQDw0OBij-vioCfgLN0eTDS12Q_sYbJw");
+
+// Enable or disable logs. Its optional.
+Geocode.enableDebug();
+// Get latidude & longitude from address.
+
 
 class SearchModal extends React.Component {
 
@@ -21,7 +30,13 @@ class SearchModal extends React.Component {
         super();
 
         this.state = {
-            modalIsOpen: false
+            modalIsOpen: false,
+            location:{
+                lat:"",
+                lng:""
+            },
+            lat:"",
+            lng:""
         };
 
         this.openModal = this.openModal.bind(this);
@@ -36,6 +51,19 @@ class SearchModal extends React.Component {
     afterOpenModal() {
         // references are now sync'd and can be accessed.
         this.subtitle.style.color = '#f00';
+        Geocode.fromAddress(this.props.location).then(
+            response => {
+                const { lat, lng } = response.results[0].geometry.location;
+                console.log(lat, lng);
+                this.setState({lat: lat})
+                this.setState({ lng: lng })
+                this.setState({location:{lat:lat}});
+                this.setState({location:{lng:lng}});
+            },
+            error => {
+                console.error(error);
+            }
+        );
     }
 
     closeModal() {
@@ -45,7 +73,7 @@ class SearchModal extends React.Component {
     render() {
         return (
             <div>
-                <button onClick={this.openModal}>SearchModal</button>
+                <button onClick={this.openModal}>Map</button>
                 <Modal
                     isOpen={this.state.modalIsOpen}
                     onAfterOpen={this.afterOpenModal}
@@ -54,11 +82,18 @@ class SearchModal extends React.Component {
                     contentLabel="Example Modal"
                 >
 
-                    <h2 ref={subtitle => this.subtitle = subtitle}>MAP</h2>
+                    <h2 ref={subtitle => this.subtitle = subtitle}>{this.props.title}</h2>
 
                     <div>
-                        google maps api
+                        Event Location: {this.props.location}
                     </div>
+                    <Maps 
+                        containerElement={<div style={{ height: `250px` }} />}
+                        mapElement={<div style={{ height: `100%` }} />}
+                        lat={this.state.lat}
+                        lng={this.state.lng}
+                        center={this.state.location}
+                    />
                     <button onClick={this.closeModal}>close</button>
 
 
