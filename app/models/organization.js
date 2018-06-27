@@ -19,6 +19,7 @@ module.exports = function (sequelize, DataTypes) {
         Organization.hasMany(models.Activity, {
             onDelete: "cascade"
         });
+        Organization.hasOne(models.User_Event_Bridge);
     };
     return Organization;
 }

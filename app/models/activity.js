@@ -43,6 +43,22 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: true
         }
     });
+<<<<<<< HEAD
+    Activity.associate = function (models) {
+        Activity.belongsTo(models.User, {
+
+        });
+        Activity.belongsTo(models.Organization, {
+
+        });
+        Activity.hasMany(models.User, {
+            foreignKey: {
+                allowNull: false
+            }
+        });
+        Activity.hasOne(models.User_Event_Bridge);
+    };
+=======
     // Activity.associate = function (models) {
     //     Activity.belongsTo(models.User, {
     //         foriegnKey: {
@@ -55,5 +71,6 @@ module.exports = function (sequelize, DataTypes) {
     //         }
     //     });
     // };
+>>>>>>> 5ece2f201341b9208d761cbd707163453d5d3e2f
     return Activity;
 };
