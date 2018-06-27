@@ -1,5 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
-    var Activity = sequelize.define("Activity", {
+    var Activity = sequelize.define("activity", {
         title: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -13,33 +13,33 @@ module.exports = function (sequelize, DataTypes) {
             len: [1]
         },
         contact: {
-            type: DataType.STRING,
+            type: DataTypes.STRING,
             allowNull: false,
             validate: {
                 len: [1]
             }
         },
         address: {
-            type: DataType.STRING,
+            type: DataTypes.STRING,
             allowNull: false,
             validate: {
                 len: [1]
             }
         },
         latitude: {
-            type: DataType.STRING,
+            type: DataTypes.STRING,
             allowNull: true
         },
         longitude: {
-            type: DataType.STRING,
+            type: DataTypes.STRING,
             allowNull: true
         },
         hours: {
-            type: DataType.INTEGER,
+            type: DataTypes.INTEGER,
             allowNull: true
         },
         points: {
-            type: DataType.INTEGER,
+            type: DataTypes.INTEGER,
             allowNull: true
         }
     });

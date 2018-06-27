@@ -1,6 +1,7 @@
 //import block
-var express = require("express");
+const express = require("express");
 var bodyParser = require("body-parser");
+const routes = require("./routes");
 
 //set up express
 var app = express();
@@ -14,7 +15,7 @@ var db = require("./models");
 app.use(bodyParser.urlencoded({ extended: true }));
 // parse application/json
 app.use(bodyParser.json());
-
+app.use(routes);
 //static directory
 app.use(express.static("public"));
 
