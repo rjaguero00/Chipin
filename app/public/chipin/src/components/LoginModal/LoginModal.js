@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
+import API from "../../utils/API.js";
 
 const customStyles = {
     content: {
@@ -41,6 +42,17 @@ class LoginModal extends React.Component {
     closeModal() {
         this.setState({ modalIsOpen: false });
     }
+    submitLogin = event => {
+        event.preventDefault();
+        API.getUserLogin(this.state.search)
+            .then(res => {
+                if (res.data.status === "error") {
+                    throw new Error(res.data.message);
+                }
+                this.setState({ results: res.data.message, error: "" });
+            })
+            .catch(err => this.setState({ error: err.message }));
+    }
 
     render() {
         return (
@@ -67,7 +79,7 @@ class LoginModal extends React.Component {
                                 <label for="exampleInputPassword1">Password</label>
                                 <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" input />
                             </div>
-                            <button onClick={this.submitHandler}>Submit</button>
+                            <button onClick={this.submitLogin}>Submit</button>
                         </form>
                     </div>
                     <button onClick={this.closeModal}>close</button>

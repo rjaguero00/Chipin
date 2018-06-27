@@ -1,14 +1,14 @@
 module.exports = function (sequelize, DataTypes) {
     var Organization = sequelize.define("Organization", {
         name: {
-            type: DataType.STRING,
+            type: DataTypes.STRING,
             allowNull: false,
             validate: {
                 len: [1]
             }
         },
         password: {
-            type: DataType.STRING,
+            type: DataTypes.STRING,
             allowNull: false,
             validate: {
                 len: [1]
@@ -19,6 +19,7 @@ module.exports = function (sequelize, DataTypes) {
         Organization.hasMany(models.Activity, {
             onDelete: "cascade"
         });
+        Organization.hasOne(models.User_Event_Bridge);
     };
     return Organization;
 }
