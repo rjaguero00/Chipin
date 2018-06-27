@@ -14,9 +14,9 @@ export default {
     return axios.delete("/api/activities/" + id);
   },
   // Saves an activity to the database
-  saveActivity: function (activityData) {
-    return axios.post("/api/activities", activityData);
-  },
+  // saveActivity: function (activityData) {
+  //   return axios.post("/api/activities", activityData);
+  // },
   //Login route
   getUserLogin: function () {
     return axios.get("/api/users");
