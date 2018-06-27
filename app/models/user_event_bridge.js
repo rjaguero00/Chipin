@@ -5,13 +5,16 @@ module.exports = function (sequelize, DataTypes) {
         },
         points: {
             type: DataType.INTEGER,
+        },
+        IsValid: {
+            defaultValue: false
         }
 
     });
 
     User_Event_Bridge.associate = function (models) {
-        User_Event_Bridge.hasMany(models.Activity),
-            User_Event_Bridge.hasMany(models.User)
+        User_Event_Bridge.hasMany(models.Activity);
+        User_Event_Bridge.hasMany(models.User);
     };
-    return User;
+    return User_Event_Bridge;
 }

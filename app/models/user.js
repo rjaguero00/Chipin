@@ -33,6 +33,7 @@ module.exports = function (sequelize, DataTypes) {
         User.hasMany(models.Activity, {
             onDelete: "cascade"
         });
+        User.hasOne(models.User_Event_Bridge);
     };
     return User;
 }

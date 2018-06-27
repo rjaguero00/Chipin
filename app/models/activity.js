@@ -54,6 +54,8 @@ module.exports = function (sequelize, DataTypes) {
                 allowNull: false
             }
         });
+        Activity.hasOne(models.Organization_Event_Bridge);
+        Activity.hasOne(models.User_Event_Bridge);
     };
     return Activity;
 };

@@ -16,7 +16,7 @@ const customStyles = {
     }
 };
 
-class LoginModal extends React.Component {
+class UserSignUp extends React.Component {
 
     constructor() {
         super();
@@ -42,9 +42,9 @@ class LoginModal extends React.Component {
     closeModal() {
         this.setState({ modalIsOpen: false });
     }
-    submitLogin = event => {
+    submitUserSignUp = event => {
         event.preventDefault();
-        API.getUserLogin(this.state.search)
+        API.postUser(this.state.search)
             .then(res => {
                 if (res.data.status === "error") {
                     throw new Error(res.data.message);
@@ -57,7 +57,7 @@ class LoginModal extends React.Component {
     render() {
         return (
             <div>
-                <button onClick={this.openModal}>Login</button>
+                <button onClick={this.openModal}>User Sign Up</button>
                 <Modal
                     isOpen={this.state.modalIsOpen}
                     onAfterOpen={this.afterOpenModal}
@@ -66,7 +66,7 @@ class LoginModal extends React.Component {
                     contentLabel="Example Modal"
                 >
 
-                    <h2 ref={subtitle => this.subtitle = subtitle}>Please Sign-in</h2>
+                    <h2 ref={subtitle => this.subtitle = subtitle}>Please Join</h2>
 
                     <div>
                         <form>
@@ -79,7 +79,7 @@ class LoginModal extends React.Component {
                                 <label for="exampleInputPassword1">Password</label>
                                 <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" input />
                             </div>
-                            <button onClick={this.submitLogin}>Submit</button>
+                            <button onClick={this.submitUserSignUp}>Submit</button>
                         </form>
                     </div>
                     <button onClick={this.closeModal}>close</button>
@@ -90,4 +90,4 @@ class LoginModal extends React.Component {
         );
     }
 }
-export default LoginModal;
+export default UserSignUp;
