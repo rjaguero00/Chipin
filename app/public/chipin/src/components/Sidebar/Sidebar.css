@@ -2,6 +2,10 @@ img {
     margin-bottom: 10px;
 }
 
+ul {
+    color: black;
+}
+
 #sidebar {
     min-width: 250px;
     max-width: 250px;
@@ -36,6 +40,7 @@ img {
     padding: 10px;
     font-size: 1.1em;
     display: block;
+    color: black;
 }
 #sidebar ul li a:hover {
     color: #7386D5;
