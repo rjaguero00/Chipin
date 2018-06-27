@@ -1,36 +1,36 @@
 module.exports = function (sequelize, DataTypes) {
     var User = sequelize.define("User", {
         name: {
-            type: DataType.STRING,
+            type: DataTypes.STRING,
             allowNull: false,
             validate: {
                 len: [1]
             }
         },
         password: {
-            type: DataType.STRING,
+            type: DataTypes.STRING,
             allowNull: false,
             validate: {
                 len: [1]
             }
         },
         imageString: {
-            type: DataType.STRING,
+            type: DataTypes.STRING,
             allowNull: true
         },
         hours: {
-            type: DataType.INTEGER,
+            type: DataTypes.INTEGER,
             defaultValue: 0
         },
         points: {
-            type: DataType.INTEGER,
+            type: DataTypes.INTEGER,
             defaultValue: 0
         }
 
     });
 
     User.associate = function (models) {
-        User.hasMany(models.Activity, {
+        User.hasMany(models.activity, {
             onDelete: "cascade"
         });
     };

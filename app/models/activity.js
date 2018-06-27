@@ -43,17 +43,17 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: true
         }
     });
-    Activity.associate = function (models) {
-        Activity.belongsTo(models.User, {
-            foriegnKey: {
-                allowNull: false
-            }
-        });
-        Activity.hasMany(models.User, {
-            foreignKey: {
-                allowNull: false
-            }
-        });
-    };
+    // Activity.associate = function (models) {
+    //     Activity.belongsTo(models.User, {
+    //         foriegnKey: {
+    //             allowNull: false
+    //         }
+    //     });
+    //     Activity.hasMany(models.User, {
+    //         foreignKey: {
+    //             allowNull: false
+    //         }
+    //     });
+    // };
     return Activity;
 };
