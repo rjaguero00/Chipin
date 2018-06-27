@@ -8,9 +8,9 @@ const Sidebar = () => (
         </div> */}
 
         <ul className="list-unstyled components">
-            <p>Organization/User Name</p> <img src="https://placeholder.baker.com/200" className="rounded mx-auto d-block" alt="..." />
+            <p>Organization/User Name</p> <img src="https://www.alaskapacific.edu/wp-content/uploads/2015/11/placeholder_profile_photo-200x200.png" className="rounded mx-auto d-block" alt="..." />
 
-            <li className="active">
+            {/* <li className="active">
                 <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" className="dropdown-toggle">Events</a>
                 <ul className="collapse list-unstyled" id="homeSubmenu">
                     <li>
@@ -19,14 +19,15 @@ const Sidebar = () => (
                     <li>
                         <a href="">Post Events</a>
                     </li>
-                    {/* <li>
+                    <li>
                         <a href="">Home 3</a>
-                    </li> */}
+                    </li>
                 </ul>
-            </li>
+            </li> */}
             <li>
-                <a href="">About</a>
-                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" className="dropdown-toggle">Pages</a>
+                <a href="">Post Events</a>
+                <a href="">Saved Events</a>
+                {/* <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" className="dropdown-toggle">Pages</a>
                 <ul className="collapse list-unstyled" id="pageSubmenu">
                     <li>
                         <a href="">Page 1</a>
@@ -37,7 +38,7 @@ const Sidebar = () => (
                     <li>
                         <a href="">Page 3</a>
                     </li>
-                </ul>
+                </ul> */}
             </li>
             {/* <li>
                 <a href="">Portfolio</a>
@@ -45,6 +46,10 @@ const Sidebar = () => (
             <li>
                 <a href="">Contact</a>
             </li> */}
+        </ul>
+
+        <ul>
+            Hours: 0 || Points: 0
         </ul>
     </nav>
 );
