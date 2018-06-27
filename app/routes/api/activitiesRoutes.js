@@ -4,7 +4,7 @@ const activitiesController = require("../../controllers/activitiesController");
 // Matches with "/api/activities" 
 router.route("/")
     .get(activitiesController.findAll)
-    .post(activitiesController.create);
+    .post(activitiesController.postEvent);
 
  // Matches with "/api/activities/:id" 
 router.route("/:id")
