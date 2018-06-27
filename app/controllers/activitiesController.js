@@ -8,11 +8,7 @@ module.exports = {
             })
     },
     //CREATES NEW VOLUNTEER ACTIVITY IN DATABASE 
-<<<<<<< HEAD
     postEvent: function (req, res) {
-=======
-    create: function (req, res) {
->>>>>>> 5ece2f201341b9208d761cbd707163453d5d3e2f
         console.log(req.body);
         var title = req.body.title;
         var body = req.body.body;
