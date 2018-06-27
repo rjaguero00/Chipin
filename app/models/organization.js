@@ -1,14 +1,14 @@
 module.exports = function (sequelize, DataTypes) {
     var Organization = sequelize.define("Organization", {
         name: {
-            type: DataType.STRING,
+            type: DataTypes.STRING,
             allowNull: false,
             validate: {
                 len: [1]
             }
         },
         password: {
-            type: DataType.STRING,
+            type: DataTypes.STRING,
             allowNull: false,
             validate: {
                 len: [1]
