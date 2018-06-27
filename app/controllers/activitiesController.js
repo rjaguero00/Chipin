@@ -1,14 +1,18 @@
 var model = require('../models');
 module.exports = {
     // FINDS ALL VOLUNTEER ACTIVITIES IN DATABASE
-    getActivities: function (req, res) {
+    findAll: function (req, res) {
         modal.activity.findAll()
             .then(function (data) {
                 res.json(data);
             })
     },
     //CREATES NEW VOLUNTEER ACTIVITY IN DATABASE 
+<<<<<<< HEAD
     postEvent: function (req, res) {
+=======
+    create: function (req, res) {
+>>>>>>> 5ece2f201341b9208d761cbd707163453d5d3e2f
         console.log(req.body);
         var title = req.body.title;
         var body = req.body.body;
@@ -33,7 +37,7 @@ module.exports = {
         })
     },
     // DELETES VOLUNTEER ACTIVITY FROM DATABASE - USED BY VOLUNTEER ACTIVITY CREATORS
-    deleteActivity: function (req, res) {
+    remove: function (req, res) {
         model.activity.destroy({
             where: { id: req.body.id }
         }).then(function (data) {

@@ -43,6 +43,7 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: true
         }
     });
+<<<<<<< HEAD
     Activity.associate = function (models) {
         Activity.belongsTo(models.User, {
 
@@ -57,5 +58,19 @@ module.exports = function (sequelize, DataTypes) {
         });
         Activity.hasOne(models.User_Event_Bridge);
     };
+=======
+    // Activity.associate = function (models) {
+    //     Activity.belongsTo(models.User, {
+    //         foriegnKey: {
+    //             allowNull: false
+    //         }
+    //     });
+    //     Activity.hasMany(models.User, {
+    //         foreignKey: {
+    //             allowNull: false
+    //         }
+    //     });
+    // };
+>>>>>>> 5ece2f201341b9208d761cbd707163453d5d3e2f
     return Activity;
 };
